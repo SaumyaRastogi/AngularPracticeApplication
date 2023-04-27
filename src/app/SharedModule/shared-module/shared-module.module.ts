@@ -4,7 +4,7 @@ import { HeaderComponent } from '../Header/header/header.component';
 import { HomePageComponent } from '../Home/home-page/home-page.component';
 import { LoginFormComponent } from '../Login/login-form/login-form.component';
 import { RegisterUserFormComponent } from '../Register/register-user-form/register-user-form.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,14 +12,16 @@ import { RegisterUserFormComponent } from '../Register/register-user-form/regist
     RegisterUserFormComponent,
     HeaderComponent,
     LoginFormComponent,
-    HomePageComponent, 
+    HomePageComponent,
+
   ],
   imports: [
-    CommonModule, 
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     HeaderComponent,
     HomePageComponent
-]
+  ]
 })
 export class SharedModuleModule { }

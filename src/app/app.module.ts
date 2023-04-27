@@ -8,7 +8,7 @@ import { HeaderComponent } from './SharedModule/Header/header/header.component';
 import { LoginFormComponent } from './SharedModule/Login/login-form/login-form.component';
 import { HomePageComponent } from './SharedModule/Home/home-page/home-page.component';
 import { SharedModuleModule } from './SharedModule/shared-module/shared-module.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { SharedModuleModule } from './SharedModule/shared-module/shared-module.m
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModuleModule
+    SharedModuleModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

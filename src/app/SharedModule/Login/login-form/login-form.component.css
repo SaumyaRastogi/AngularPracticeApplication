@@ -1,4 +1,4 @@
-.login{
+.login {
     height: 300px;
     width: 400px;
     background-color: #B4C9D7;
@@ -9,6 +9,19 @@
     transform: translate(-50%, 30%);
 }
 
-.registerLink{
-    
+.header {
+    width: 100%;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 20px;
+    position: fixed;
+    top: 8%;
+    left: 45%;
+    height: 50px
+}
+
+form {
+    margin-top: 100px;
+    /* Add some space below the header */
+    /* login form styles go here */
 }

@@ -1,6 +1,6 @@
 .home{
   /* The image used */
-  background-image: url("src/assets/home2.jpeg");
+  /* background-image: url("src/assets/home2.jpeg"); */
   background-size: cover;
   min-height: 600px;
   padding-top: 25px;

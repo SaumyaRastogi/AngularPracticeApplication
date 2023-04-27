@@ -1,3 +1,39 @@
 <div class="login">
-<a href="test" class="registerLink">Not a User? Register</a>
+ 
+        <header>
+            <h1>Login</h1>
+        </header>
+   
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>
+                <input type="radio" formControlName="userType" value="user"> User
+            </label>
+            <label>
+                <input type="radio" formControlName="userType" value="admin"> Admin
+            </label>
+        </div>
+        <div>
+            <label>Email:</label>
+
+            <input type="email" formControlName="email">
+            <div
+                *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+                <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</div>
+                <div *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email address.</div>
+            </div>
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" formControlName="password">
+            <div
+                *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+                <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</div>
+                <div *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters
+                    long.</div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+    <a href="test" class="registerLink">Not a User? Register</a>
 </div>
