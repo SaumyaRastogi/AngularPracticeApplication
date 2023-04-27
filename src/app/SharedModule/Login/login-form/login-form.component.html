@@ -1,18 +1,16 @@
-<div class="login">
- 
-        <header>
-            <h1>Login</h1>
-        </header>
-   
+<div  class="login-container">
+
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div>
+        <h2>Login</h2>
+        <div class="radio-group">
             <label>
-                <input type="radio" formControlName="userType" value="user"> User
+              <input type="radio" name="user-type" value="user" formControlName="userType"> User
             </label>
             <label>
-                <input type="radio" formControlName="userType" value="admin"> Admin
+              <input type="radio" name="user-type" value="admin" formControlName="userType"> Admin
             </label>
-        </div>
+          </div>
+          
         <div>
             <label>Email:</label>
 
@@ -33,7 +31,11 @@
                     long.</div>
             </div>
         </div>
+        <br />
         <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        <br/>
+        <a href="test" class="registerLink">Not a User? Register</a>
     </form>
-    <a href="test" class="registerLink">Not a User? Register</a>
+
+
 </div>
