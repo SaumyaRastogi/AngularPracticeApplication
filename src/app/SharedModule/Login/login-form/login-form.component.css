@@ -1,0 +1,14 @@
+.login{
+    height: 300px;
+    width: 400px;
+    background-color: #B4C9D7;
+    opacity: 80%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 30%);
+}
+
+.registerLink{
+    
+}

@@ -1,0 +1,14 @@
+.header{
+    background-color: #B4C9D7;
+    height: 50px;
+    width: 100%;
+    /* opacity: 35%; */
+}
+
+.headerTitle{
+    position: fixed;
+    /* position: static; */
+    top: 8%;
+    left: 45%;
+    color: white;
+}

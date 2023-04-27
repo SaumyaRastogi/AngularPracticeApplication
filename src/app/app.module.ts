@@ -7,19 +7,17 @@ import { RegisterUserFormComponent } from './SharedModule/Register/register-user
 import { HeaderComponent } from './SharedModule/Header/header/header.component';
 import { LoginFormComponent } from './SharedModule/Login/login-form/login-form.component';
 import { HomePageComponent } from './SharedModule/Home/home-page/home-page.component';
+import { SharedModuleModule } from './SharedModule/shared-module/shared-module.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RegisterUserFormComponent,
-    HeaderComponent,
-    LoginFormComponent,
-    HomePageComponent, 
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
