@@ -1,1 +1,59 @@
-<p>register-user-form works!</p>
+<h2>Registration</h2>
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Role:
+      <select formControlName="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+    </label>
+  </div>
+  
+  <div>
+    <label>
+      Name:
+      <input type="text" formControlName="name">
+    </label>
+  </div>
+  
+  <div>
+    <label>
+      Email:
+      <input type="email" formControlName="email">
+    </label>
+  </div>
+  
+  <div>
+    <label>
+      Contact:
+      <input type="text" formControlName="contact">
+    </label>
+  </div>
+  
+  <div>
+    Skills:
+    <label *ngFor="let skill of skills">
+      <input type="checkbox" [formControlName]="skill">{{ skill }}
+    </label>
+  </div>
+  
+  <div>
+    <label>
+      Password:
+      <input type="password" formControlName="password">
+    </label>
+  </div>
+  
+  <div>
+    <label>
+      Confirm Password:
+      <input type="password" formControlName="confirmPassword">
+    </label>
+  </div>
+  
+  <button type="submit" [disabled]="!registrationForm.valid">Register</button>
+</form>
+
+  
