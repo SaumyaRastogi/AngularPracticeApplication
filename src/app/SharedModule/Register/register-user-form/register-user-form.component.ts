@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-register-user-form',
@@ -26,7 +26,7 @@ export class RegisterUserFormComponent implements OnInit {
   }
 
   buildSkills() {
-    const skillsArr = this.skills.map(skill => {
+    const skillsArr = this.skills.map(skills => {
       return this.fb.control(false);
     });
     return this.fb.array(skillsArr);
