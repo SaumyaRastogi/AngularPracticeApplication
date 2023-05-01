@@ -1,4 +1,4 @@
-<h2>Registration</h2>
+<h2>Registration Form</h2>
 
 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
   <div>
@@ -10,50 +10,64 @@
       </select>
     </label>
   </div>
-  
+
   <div>
     <label>
       Name:
       <input type="text" formControlName="name">
     </label>
   </div>
-  
+
   <div>
     <label>
       Email:
       <input type="email" formControlName="email">
     </label>
   </div>
-  
+
   <div>
     <label>
       Contact:
       <input type="text" formControlName="contact">
     </label>
   </div>
-  
+
   <div>
-    Skills:
+    <!-- Skills:
     <label *ngFor="let skill of skills">
       <input type="checkbox" [formControlName]="skill">{{ skill }}
-    </label>
+    </label> -->
+    <label>Skills:</label>
+    <div formGroupName="skills">
+      <label><input type="checkbox" formControlName="HTML">HTML </label>
+      <label><input type="checkbox" formControlName="CSS">CSS </label>
+      <label><input type="checkbox" formControlName="JavaScript">JavaScript</label>
+      <label><input type="checkbox" formControlName="Angular">Angular</label>
+      <label><input type="checkbox" formControlName="React">React</label>
+      <label><input type="checkbox" formControlName="Vue">Vue</label>
+    </div>
+
+    <div *ngIf="selectedSkills.length > 0">
+      <p>You have selected the following skills:</p>
+      <ul>
+        <li *ngFor="let skill of selectedSkills">{{ skill }}</li>
+      </ul>
+    </div>
   </div>
-  
+
   <div>
     <label>
       Password:
       <input type="password" formControlName="password">
     </label>
   </div>
-  
+
   <div>
     <label>
       Confirm Password:
       <input type="password" formControlName="confirmPassword">
     </label>
   </div>
-  
+
   <button type="submit" [disabled]="!registrationForm.valid">Register</button>
 </form>
-
-  

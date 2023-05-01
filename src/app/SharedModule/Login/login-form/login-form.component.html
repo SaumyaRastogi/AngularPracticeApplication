@@ -1,13 +1,12 @@
 <div class="login-container">
-
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <h2>Login</h2>
         <div class="radio-group">
             <label>
-                <input type="radio" name="user-type" value="user" formControlName="userType"> User
+                <input type="radio" name="user-type" value="user" > User
             </label>
             <label>
-                <input type="radio" name="user-type" value="admin" formControlName="userType"> Admin
+                <input type="radio" name="user-type" value="admin" > Admin
             </label>
         </div>
         <div>
@@ -27,30 +26,9 @@
                 <div *ngIf="loginForm.controls['password'].errors?.['required']">Password is required</div>
             </div>
         </div>
-        <button routerLink='/user-details' type="submit" [disabled]="loginForm.invalid">Login</button>
-        <div *ngIf="loggedIn">
-            <button routerLink='/user-details'></button>
-        </div>
+        <button routerLink='/home' type="submit" [disabled]="loginForm.invalid">Login</button>
         <br />
-        <a routerLink='/contact' routerLinkActive="active">Not a User? Register</a>
+        <a routerLink='/home/homedashboard/register' routerLinkActive="active">Not a User? Register</a>
     </form>
-    <div *ngIf="loginDetails">
-        <table>
-            <thead>
-                <tr>
-                    <th>Email</th>
-                    <th>Password</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{ loginDetails.email }}</td>
-                    <td>{{ loginDetails.password }}</td>
-
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
 </div>
+

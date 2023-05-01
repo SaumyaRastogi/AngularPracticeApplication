@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  tabs = ["tab1", "tab2"]
+  //tabs = ["tab1", "tab2"]
   constructor() { }
 
   ngOnInit(): void {

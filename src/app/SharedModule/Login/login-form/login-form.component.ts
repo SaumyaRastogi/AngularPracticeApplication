@@ -11,9 +11,16 @@ import { UserService } from 'src/app/services/user.service';
 export class LoginFormComponent implements OnInit {
 
   loginForm !: FormGroup;
-  userType: string = 'user';
-  loggedIn = false;
-  loginDetails: any;
+  userType!: FormControl | string;
+  signUpUser: any[] = [];
+  signupObj: any = {
+    email: '',
+    passowrd: ''
+  }
+  loginObj: any = {
+    email: '',
+    passowrd: ''
+  }
 
   constructor(private fb: FormBuilder, private userService: UserService, private authService: AuthService) { }
 
@@ -23,13 +30,6 @@ export class LoginFormComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
-  login() {
-    this.loginDetails = {
-      email: this.loginForm.controls['email'].value,
-      password: this.loginForm.controls['password'].value
-    };
-  }
-
 
   onSubmit() {
     const { email, password } = this.loginForm.value;
